@@ -1,0 +1,87 @@
+@page
+@model RequestsModel
+
+@{
+    ViewData["Title"] = "Service Requests";
+}
+
+<div class="container">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1>Service Requests</h1>
+            <p class="text-muted">Manage and track maintenance and service requests.</p>
+        </div>
+
+        <a class="btn btn-primary" href="#">
+            + New Request
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table align-middle">
+
+                    <thead>
+                        <tr>
+                            <th>Request</th>
+                            <th>Category</th>
+                            <th>Priority</th>
+                            <th>Status</th>
+                            <th>Submitted By</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Computer not starting</td>
+                            <td>IT Support</td>
+                            <td>High</td>
+                            <td>
+                                <span class="badge status-open">
+                                    Open
+                                </span>
+                            </td>
+                            <td>Employee</td>
+                            <td>22 Sep 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Office printer problem</td>
+                            <td>Equipment</td>
+                            <td>Medium</td>
+                            <td>
+                                <span class="badge status-progress">
+                                    In Progress
+                                </span>
+                            </td>
+                            <td>HR Department</td>
+                            <td>21 Sep 2026</td>
+                        </tr>
+
+                        <tr>
+                            <td>Broken office light</td>
+                            <td>Maintenance</td>
+                            <td>Low</td>
+                            <td>
+                                <span class="badge status-resolved">
+                                    Resolved
+                                </span>
+                            </td>
+                            <td>Employee</td>
+                            <td>20 Sep 2026</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
