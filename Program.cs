@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using ServiceDesk.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ServiceDeskContext>(options =>
+    options.UseSqlite("Data Source=servicedesk.db"));
 
 var app = builder.Build();
 
