@@ -32,6 +32,7 @@
                             <th>Status</th>
                             <th>Submitted By</th>
                             <th>Date</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -48,10 +49,18 @@
                     <span class="badge status-open">
                     @request.Status
                      </span>
-                             </td>
-                            <td>@request.SubmittedBy</td>
-                           <td>@request.DateSubmitted.ToString("dd MMM yyyy")</td>
-                            </tr>
+                        </td>
+                        <td>@request.SubmittedBy</td>
+                        <td>@request.DateSubmitted.ToString("dd MMM yyyy")</td>
+
+                        <td>
+                          <a asp-page="/EditRequest"
+                           asp-route-id="@request.Id"
+                           class="btn btn-sm btn-primary">
+                           Manage
+                          </a>
+                        </td>
+                        </tr>
                            }
                     </tbody>
 

@@ -1,0 +1,65 @@
+@page
+@model ServiceDesk.Pages.EditRequestModel
+
+@{
+    ViewData["Title"] = "Update Request";
+}
+
+<div class="container">
+
+    <div class="mb-4">
+        <h1>Update Request</h1>
+        <p class="text-muted">Update the status of this service request.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+
+            <h4>@Model.Request.RequestTitle</h4>
+
+            <p>
+                <strong>Category:</strong> @Model.Request.Category
+            </p>
+
+            <p>
+                <strong>Priority:</strong> @Model.Request.Priority
+            </p>
+
+            <p>
+                <strong>Submitted By:</strong> @Model.Request.SubmittedBy
+            </p>
+
+            <p>
+                <strong>Description:</strong> @Model.Request.Description
+            </p>
+
+            <form method="post">
+
+                <input type="hidden" asp-for="Request.Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Request.Status" class="form-label">
+                        Status
+                    </label>
+
+                    <select asp-for="Request.Status" class="form-select">
+                        <option value="Open">Open</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Update Status
+                </button>
+
+                <a href="/Requests" class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
