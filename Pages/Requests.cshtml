@@ -37,44 +37,24 @@
 
                     <tbody>
 
-                        <tr>
-                            <td>Computer not starting</td>
-                            <td>IT Support</td>
-                            <td>High</td>
-                            <td>
-                                <span class="badge status-open">
-                                    Open
-                                </span>
-                            </td>
-                            <td>Employee</td>
-                            <td>22 Sep 2026</td>
-                        </tr>
+                        <tbody>
+                           @foreach (var request in Model.Requests)
+                           {
+                       <tr>
+                          <td>@request.RequestTitle</td>
+                          <td>@request.Category</td>
+                          <td>@request.Priority</td>
+                          <td>
+                    <span class="badge status-open">
+                    @request.Status
+                     </span>
+                             </td>
+                            <td>@request.SubmittedBy</td>
+                           <td>@request.DateSubmitted.ToString("dd MMM yyyy")</td>
+                            </tr>
+                           }
+                    </tbody>
 
-                        <tr>
-                            <td>Office printer problem</td>
-                            <td>Equipment</td>
-                            <td>Medium</td>
-                            <td>
-                                <span class="badge status-progress">
-                                    In Progress
-                                </span>
-                            </td>
-                            <td>HR Department</td>
-                            <td>21 Sep 2026</td>
-                        </tr>
-
-                        <tr>
-                            <td>Broken office light</td>
-                            <td>Maintenance</td>
-                            <td>Low</td>
-                            <td>
-                                <span class="badge status-resolved">
-                                    Resolved
-                                </span>
-                            </td>
-                            <td>Employee</td>
-                            <td>20 Sep 2026</td>
-                        </tr>
 
                     </tbody>
 
