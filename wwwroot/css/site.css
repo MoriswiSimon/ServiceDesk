@@ -434,3 +434,18 @@ footer a {
         margin-bottom: 15px;
     }
 }
+
+.status-open {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.status-progress {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.status-resolved {
+    background-color: #198754;
+    color: #fff;
+}

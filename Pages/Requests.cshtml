@@ -46,9 +46,11 @@
                           <td>@request.Category</td>
                           <td>@request.Priority</td>
                           <td>
-                    <span class="badge status-open">
-                    @request.Status
-                     </span>
+
+                        <span class="badge @(request.Status == "Open" ? "status-open" : request.Status == "In Progress" ? "status-progress" : "status-resolved")">
+                            @request.Status
+                        </span>
+
                         </td>
                         <td>@request.SubmittedBy</td>
                         <td>@request.DateSubmitted.ToString("dd MMM yyyy")</td>
