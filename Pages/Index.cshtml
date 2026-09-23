@@ -1,10 +1,59 @@
 ﻿@page
 @model IndexModel
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "ServiceDesk Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+
+    <div class="mb-4">
+        <h1>ServiceDesk Dashboard</h1>
+        <p class="text-muted">Maintenance and Service Management System</p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Open Requests</h5>
+                    <h2>@Model.OpenRequests</h2>
+                    <p class="text-muted">Requests waiting for attention</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5>In Progress</h5>
+                    <h2>@Model.InProgressRequests</h2>
+                    <p class="text-muted">Requests currently being handled</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Resolved</h5>
+                    <h2>@Model.ResolvedRequests</h2>
+                    <p class="text-muted">Completed service requests</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mt-4">
+        <a href="/Requests" class="btn btn-primary">
+            View Service Requests
+        </a>
+
+        <a href="/NewRequests" class="btn btn-secondary">
+            + New Request
+        </a>
+    </div>
+
 </div>
