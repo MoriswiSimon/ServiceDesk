@@ -15,12 +15,24 @@ namespace ServiceDesk.Pages
         }
 
         public List<ServiceRequest> Requests { get; set; } = new();
+        public string SearchTerm { get; set; } = "";
 
         public async Task OnGetAsync()
-        {
-            Requests = await _context.ServiceRequests
-                .OrderByDescending(r => r.DateSubmitted)
-                .ToListAsync();
-        }
+{
+    var query = _context.ServiceRequests.AsQueryable();
+
+    if (!string.IsNullOrWhiteSpace(SearchTerm))
+    {
+        query = query.Where(r =>
+            r.RequestTitle.Contains(SearchTerm) ||
+            r.Category.Contains(SearchTerm) ||
+            r.SubmittedBy.Contains(SearchTerm) ||
+            r.Status.Contains(SearchTerm));
+    }
+
+    Requests = await query
+        .OrderByDescending(r => r.DateSubmitted)
+        .ToListAsync();
+}
     }
 }
