@@ -46,5 +46,21 @@ namespace ServiceDesk.Pages
 
             return RedirectToPage("/Requests");
         }
+
+        public async Task<IActionResult> OnPostDeleteAsync()
+        {
+            var request = await _context.ServiceRequests.FindAsync(Request.Id);
+
+            if (request == null)
+            {
+                return NotFound();
+            }
+
+            _context.ServiceRequests.Remove(request);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("/Requests");
+        }
     }
 }

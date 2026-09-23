@@ -57,6 +57,13 @@
                     Cancel
                 </a>
 
+                <button type="submit"
+                   asp-page-handler="Delete"
+                   class="btn btn-danger"
+                   onclick="return confirm('Are you sure you want to delete this request?');">
+                    Delete Request
+                </button>
+
             </form>
 
         </div>
