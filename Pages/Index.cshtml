@@ -1,59 +1,94 @@
-﻿@page
+﻿
+@page
 @model IndexModel
 
 @{
-    ViewData["Title"] = "ServiceDesk Dashboard";
+    ViewData["Title"] = "ServiceDesk";
 }
 
-<div class="container">
+<div class="home-page">
 
-    <div class="mb-4">
-        <h1>ServiceDesk Dashboard</h1>
-        <p class="text-muted">Maintenance and Service Management System</p>
-    </div>
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="hero-label">SERVICE MANAGEMENT SYSTEM</span>
 
-    <div class="row g-4">
+            <h1>Manage workplace requests<br />with confidence.</h1>
 
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5>Open Requests</h5>
-                    <h2>@Model.OpenRequests</h2>
-                    <p class="text-muted">Requests waiting for attention</p>
-                </div>
+            <p>
+                ServiceDesk helps teams submit, track, assign,
+                and resolve workplace service requests from one place.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/NewRequests" class="primary-button">
+                    Submit a Request
+                </a>
+
+                <a href="/Requests" class="secondary-button">
+                    View Requests
+                </a>
             </div>
         </div>
+    </section>
 
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5>In Progress</h5>
-                    <h2>@Model.InProgressRequests</h2>
-                    <p class="text-muted">Requests currently being handled</p>
-                </div>
-            </div>
+    <!-- Features -->
+    <section class="features-section">
+
+        <div class="section-heading">
+            <span>WHAT WE DO</span>
+            <h2>Everything in one place.</h2>
         </div>
 
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5>Resolved</h5>
-                    <h2>@Model.ResolvedRequests</h2>
-                    <p class="text-muted">Completed service requests</p>
-                </div>
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-number">01</div>
+                <h3>Submit Requests</h3>
+                <p>
+                    Report IT, equipment, and maintenance issues
+                    quickly and efficiently.
+                </p>
             </div>
+
+            <div class="feature-card">
+                <div class="feature-number">02</div>
+                <h3>Track Progress</h3>
+                <p>
+                    Follow service requests from submission
+                    through to resolution.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-number">03</div>
+                <h3>Assign & Manage</h3>
+                <p>
+                    Assign requests to the right support team
+                    and keep work organised.
+                </p>
+            </div>
+
         </div>
 
-    </div>
+    </section>
 
-    <div class="mt-4">
-        <a href="/Requests" class="btn btn-primary">
-            View Service Requests
+    <!-- Call to Action -->
+    <section class="cta-section">
+
+        <div>
+            <span>READY TO GET STARTED?</span>
+            <h2>Have a service issue?</h2>
+            <p>
+                Submit a request and let the support team take it from there.
+            </p>
+        </div>
+
+        <a href="/NewRequests" class="primary-button">
+            Create Request
         </a>
 
-        <a href="/NewRequests" class="btn btn-secondary">
-            + New Request
-        </a>
-    </div>
+    </section>
 
 </div>
+```
