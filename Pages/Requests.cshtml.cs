@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using ServiceDesk.Data;
 using ServiceDesk.Models;
 
@@ -15,6 +16,8 @@ namespace ServiceDesk.Pages
         }
 
         public List<ServiceRequest> Requests { get; set; } = new();
+
+        [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; } = "";
 
         public async Task OnGetAsync()
