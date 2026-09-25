@@ -1,0 +1,85 @@
+@page
+@model ServiceDesk.Pages.RequestDetailsModel
+
+@{
+    ViewData["Title"] = "Request Details";
+}
+
+<div class="request-details-page">
+
+    <div class="request-details-header">
+        <div>
+            <span class="request-details-label">SERVICE REQUEST</span>
+            <h1>Request Details</h1>
+            <p>View the complete information for this service request.</p>
+        </div>
+
+        <a href="/Requests" class="details-back-button">
+            ← Back to Requests
+        </a>
+    </div>
+
+    <div class="request-details-card">
+
+        <div class="request-details-title">
+            <div>
+                <span class="details-field-label">REQUEST</span>
+                <h2>@Model.Request.RequestTitle</h2>
+            </div>
+
+            <span class="details-status">
+                @Model.Request.Status
+            </span>
+        </div>
+
+        <div class="request-details-grid">
+
+            <div class="details-field">
+                <span class="details-field-label">CATEGORY</span>
+                <strong>@Model.Request.Category</strong>
+            </div>
+
+            <div class="details-field">
+                <span class="details-field-label">PRIORITY</span>
+                <strong>@Model.Request.Priority</strong>
+            </div>
+
+            <div class="details-field">
+                <span class="details-field-label">SUBMITTED BY</span>
+                <strong>@Model.Request.SubmittedBy</strong>
+            </div>
+
+            <div class="details-field">
+                <span class="details-field-label">ASSIGNED TO</span>
+                <strong>@Model.Request.AssignedTo</strong>
+            </div>
+
+            <div class="details-field">
+                <span class="details-field-label">DATE SUBMITTED</span>
+                <strong>@Model.Request.DateSubmitted.ToString("dd MMM yyyy, HH:mm")</strong>
+            </div>
+
+        </div>
+
+        <div class="details-description">
+            <span class="details-field-label">DESCRIPTION</span>
+            <p>@Model.Request.Description</p>
+        </div>
+
+        <div class="request-details-actions">
+
+            <a href="/EditRequest?id=@Model.Request.Id"
+               class="details-edit-button">
+                Manage Request
+            </a>
+
+            <a href="/Requests"
+               class="details-cancel-button">
+                Back to Requests
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

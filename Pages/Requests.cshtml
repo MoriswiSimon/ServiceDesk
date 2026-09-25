@@ -13,24 +13,24 @@
             <p class="text-muted">Manage and track maintenance and service requests.</p>
         </div>
 
-        <form method="get" class="mb-3">
-    <div class="input-group">
-        <input type="text"
-               name="SearchTerm"
-               value="@Model.SearchTerm"
-               class="form-control"
-               placeholder="Search requests..." />
-
-        <button type="submit" class="btn btn-primary">
-            Search
-        </button>
+        <a class="btn btn-primary" href="/NewRequests">
+            + New Request
+        </a>
     </div>
-</form>
 
-       <a class="btn btn-primary" href="/NewRequests">
-        + New Request
-       </a>
-    </div>
+    <form method="get" class="mb-3">
+        <div class="input-group">
+            <input type="text"
+                   name="SearchTerm"
+                   value="@Model.SearchTerm"
+                   class="form-control"
+                   placeholder="Search requests..." />
+
+            <button type="submit" class="btn btn-primary">
+                Search
+            </button>
+        </div>
+    </form>
 
     <div class="card">
         <div class="card-body">
@@ -53,35 +53,43 @@
 
                     <tbody>
 
-                        <tbody>
-                           @foreach (var request in Model.Requests)
-                           {
-                       <tr>
-                          <td>@request.RequestTitle</td>
-                          <td>@request.Category</td>
-                          <td>@request.Priority</td>
-                          <td>
+                        @foreach (var request in Model.Requests)
+                        {
+                            <tr>
+                                <td>@request.RequestTitle</td>
 
-                        <span class="badge @(request.Status == "Open" ? "status-open" : request.Status == "In Progress" ? "status-progress" : "status-resolved")">
-                            @request.Status
-                        </span>
+                                <td>@request.Category</td>
 
-                        </td>
-                        <td>@request.SubmittedBy</td>
-                        <td>@request.AssignedTo</td>
-                        <td>@request.DateSubmitted.ToString("dd MMM yyyy")</td>
+                                <td>@request.Priority</td>
 
-                        <td>
-                          <a asp-page="/EditRequest"
-                           asp-route-id="@request.Id"
-                           class="btn btn-sm btn-primary">
-                           Manage
-                          </a>
-                        </td>
-                        </tr>
-                           }
-                    </tbody>
+                                <td>
+                                    <span class="badge @(request.Status == "Open" ? "status-open" : request.Status == "In Progress" ? "status-progress" : "status-resolved")">
+                                        @request.Status
+                                    </span>
+                                </td>
 
+                                <td>@request.SubmittedBy</td>
+
+                                <td>@request.AssignedTo</td>
+
+                                <td>@request.DateSubmitted.ToString("dd MMM yyyy")</td>
+
+                                <td>
+                                    <a asp-page="/RequestDetails"
+                                       asp-route-id="@request.Id"
+                                       class="btn btn-sm btn-secondary">
+                                        View Details
+                                    </a>
+
+                                    <a asp-page="/EditRequest"
+                                       asp-route-id="@request.Id"
+                                       class="btn btn-sm btn-primary">
+                                        Manage
+                                    </a>
+                                </td>
+
+                            </tr>
+                        }
 
                     </tbody>
 
