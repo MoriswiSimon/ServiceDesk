@@ -1,0 +1,50 @@
+@page
+@model ServiceDesk.Pages.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="login-page">
+
+    <div class="login-card">
+
+        <div class="login-header">
+            <span class="login-label">SERVICE DESK</span>
+            <h1>Welcome back</h1>
+            <p>Sign in to manage service requests.</p>
+        </div>
+
+        <form method="post">
+
+            <div class="login-field">
+                <label asp-for="Username">Username</label>
+                <input asp-for="Username"
+                       class="form-control"
+                       placeholder="Enter your username" />
+            </div>
+
+            <div class="login-field">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password"
+                       type="password"
+                       class="form-control"
+                       placeholder="Enter your password" />
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <div class="login-error">
+                    @Model.ErrorMessage
+                </div>
+            }
+
+            <button type="submit" class="login-button">
+                Sign In
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

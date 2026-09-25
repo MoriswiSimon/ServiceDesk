@@ -11,5 +11,6 @@ namespace ServiceDesk.Data
         }
 
         public DbSet<ServiceRequest> ServiceRequests { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

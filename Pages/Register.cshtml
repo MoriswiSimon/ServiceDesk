@@ -1,0 +1,65 @@
+@page
+@model ServiceDesk.Pages.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="login-page">
+
+    <div class="login-card">
+
+        <div class="login-header">
+            <span class="login-label">SERVICE DESK</span>
+            <h1>Create account</h1>
+            <p>Register to manage service requests.</p>
+        </div>
+
+        <form method="post">
+
+            <div class="login-field">
+                <label asp-for="FullName">Full Name</label>
+                <input asp-for="FullName"
+                       class="form-control"
+                       placeholder="Enter your full name" />
+            </div>
+
+            <div class="login-field">
+                <label asp-for="Username">Username</label>
+                <input asp-for="Username"
+                       class="form-control"
+                       placeholder="Choose a username" />
+            </div>
+
+            <div class="login-field">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password"
+                       type="password"
+                       class="form-control"
+                       placeholder="Create a password" />
+            </div>
+
+            <div class="login-field">
+                <label asp-for="ConfirmPassword">Confirm Password</label>
+                <input asp-for="ConfirmPassword"
+                       type="password"
+                       class="form-control"
+                       placeholder="Confirm your password" />
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <div class="login-error">
+                    @Model.ErrorMessage
+                </div>
+            }
+
+            <button type="submit" class="login-button">
+                Create Account
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
