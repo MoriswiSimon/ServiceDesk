@@ -5,47 +5,72 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">ServiceDesk</h1>
-    <p>Maintenance & Service Management System</p>
-</div>
+<div class="dashboard-page">
 
-<div class="row mt-4">
-
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5>Open Requests</h5>
-                <h2>0</h2>
-            </div>
+    <!-- Header -->
+    <div class="dashboard-header">
+        <div>
+            <span class="dashboard-label">SERVICE DESK</span>
+            <h1>Dashboard</h1>
+            <p>Monitor and manage workplace service requests.</p>
         </div>
+
+        <a href="/NewRequests" class="dashboard-action">
+            + New Request
+        </a>
     </div>
 
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5>In Progress</h5>
-                <h2>0</h2>
-            </div>
+    <!-- Statistics -->
+    <div class="dashboard-stats">
+
+        <div class="dashboard-card">
+            <span class="dashboard-card-label">OPEN REQUESTS</span>
+           <h2>@Model.OpenRequests</h2>
+            <p>Requests waiting for attention</p>
         </div>
+
+        <div class="dashboard-card">
+            <span class="dashboard-card-label">IN PROGRESS</span>
+           <h2>@Model.OpenRequests</h2>
+            <p>Requests currently being handled</p>
+        </div>
+
+        <div class="dashboard-card">
+            <span class="dashboard-card-label">RESOLVED</span>
+            <h2>@Model.OpenRequests</h2>
+            <p>Completed service requests</p>
+        </div>
+
+        <div class="dashboard-card">
+            <span class="dashboard-card-label">TOTAL REQUESTS</span>
+           <h2>@Model.OpenRequests</h2>
+            <p>All submitted requests</p>
+        </div>
+
     </div>
 
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5>Resolved</h5>
-                <h2>0</h2>
-            </div>
-        </div>
-    </div>
+    <!-- Quick Actions -->
+    <div class="dashboard-section">
 
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h5>Total Requests</h5>
-                <h2>0</h2>
-            </div>
+        <div class="dashboard-section-heading">
+            <span>QUICK ACTIONS</span>
+            <h2>Manage ServiceDesk</h2>
         </div>
+
+        <div class="dashboard-actions">
+
+            <a href="/NewRequests" class="dashboard-action-card">
+                <strong>Submit Request</strong>
+                <span>Create a new workplace service request.</span>
+            </a>
+
+            <a href="/Requests" class="dashboard-action-card">
+                <strong>View Requests</strong>
+                <span>Search, assign and manage existing requests.</span>
+            </a>
+
+        </div>
+
     </div>
 
 </div>
