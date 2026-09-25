@@ -41,6 +41,7 @@ namespace ServiceDesk.Pages
             }
 
             request.Status = Request.Status;
+            request.AssignedTo = Request.AssignedTo;
 
             await _context.SaveChangesAsync();
 

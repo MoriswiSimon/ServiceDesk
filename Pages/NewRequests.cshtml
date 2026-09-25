@@ -1,5 +1,6 @@
+
 @page
-@model  ServiceDesk.Pages.NewRequestModel
+@model ServiceDesk.Pages.NewRequestModel
 
 @{
     ViewData["Title"] = "New Service Request";
@@ -43,6 +44,16 @@
                 </div>
 
                 <div class="mb-3">
+                    <label class="form-label">Assigned To</label>
+                    <select class="form-select" name="AssignedTo" required>
+                        <option value="">Select technician</option>
+                        <option>IT Support</option>
+                        <option>Maintenance Team</option>
+                        <option>Equipment Support</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label class="form-label">Submitted By</label>
                     <input type="text" class="form-control" name="SubmittedBy" required>
                 </div>
@@ -66,3 +77,4 @@
     </div>
 
 </div>
+```

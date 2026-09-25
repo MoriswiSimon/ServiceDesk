@@ -49,6 +49,21 @@
                     </select>
                 </div>
 
+                <div class="mb-3">
+                    <label asp-for="Request.AssignedTo" class="form-label">
+                        Assigned To
+
+                    </label>
+
+                    <select asp-for="Request.AssignedTo" class="form-select">
+                        <option value="">Select technician</option>
+                        <option>IT Support</option>
+                        <option>Maintenance Team</option>
+                        <option>Equipment Support</option>
+                    </select>
+
+                </div>
+
                 <button type="submit" class="btn btn-primary">
                     Update Status
                 </button>

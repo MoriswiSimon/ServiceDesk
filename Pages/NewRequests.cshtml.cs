@@ -22,6 +22,8 @@ namespace ServiceDesk.Pages
 
         [BindProperty]
         public string Priority { get; set; } = "";
+        [BindProperty]
+        public string AssignedTo { get; set; } = "";
 
         [BindProperty]
         public string SubmittedBy { get; set; } = "";
@@ -36,6 +38,7 @@ namespace ServiceDesk.Pages
                 RequestTitle = RequestTitle,
                 Category = Category,
                 Priority = Priority,
+                AssignedTo = AssignedTo,
                 SubmittedBy = SubmittedBy,
                 Description = Description,
                 Status = "Open",

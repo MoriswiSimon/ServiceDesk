@@ -15,6 +15,7 @@ namespace ServiceDesk.Models
         public string Description { get; set; } = "";
 
         public string Status { get; set; } = "Open";
+        public string AssignedTo { get; set; } = "";
 
         public DateTime DateSubmitted { get; set; } = DateTime.Now;
     }
